@@ -280,7 +280,6 @@ def past_ordrs():
 
 @app.route("/stock/new", methods=["POST"])
 def new_item():
-    print("Using DB:", DB_PATH.resolve())
     data = request.get_json()
     prdct = data["product_name"]
     quant = data["quantity"]
