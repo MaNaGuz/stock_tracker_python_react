@@ -26,8 +26,6 @@ app = Flask(__name__)
 
 CORS(app)
 
-PORT = 5001
-
 DB_PATH = Path("../data/orders.db")
 print("Using DB:", DB_PATH.resolve())
 
@@ -352,4 +350,4 @@ def get_all_stock():
 
 if __name__ == "__main__":
     #PORT = os.getenv("PORT")
-    app.run(host="0.0.0.0", port=PORT)
+    app.run(host="0.0.0.0", port=5000)
