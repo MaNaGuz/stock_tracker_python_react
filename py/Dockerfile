@@ -15,8 +15,6 @@ COPY store/ /opt/store/py
 
 RUN pip install --no-cache-dir -r config/requirements.txt
 
-RUN python3 py/db_create.py > /opt/store/data/db_create.out
-
 EXPOSE 5000
 
 CMD ["gunicorn", "-b", "0.0.0.0:5000", "py.app:app"]
