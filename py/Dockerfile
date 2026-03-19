@@ -15,7 +15,7 @@ RUN mkdir -p /opt/store/data
 
 RUN pip install --no-cache-dir -r config/requirements.txt
 
-RUN python3 py/db_create.py
+RUN python3 py/db_create.py > db_create.out
 
 EXPOSE 5000
 
