@@ -16,6 +16,6 @@ RUN mkdir -p /opt/store/data
 
 RUN pip install --no-cache-dir -r config/requirements.txt
 
-RUN python3 db_create.py
+RUN python3 py/db_create.py
 
 CMD ["gunicorn", "-b", "0.0.0.0:5000", "py.app:app"]
