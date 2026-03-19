@@ -22,6 +22,8 @@ from .queries import \
     PAST_ORDRS_QRY, \
     prdcts_names_qry
 
+from db_create import create_db
+
 app = Flask(__name__)
 
 CORS(app)
@@ -349,4 +351,5 @@ def get_all_stock():
 
 
 if __name__ == "__main__":
+    create_db(DB_PATH)
     app.run(host="0.0.0.0", port=5000)

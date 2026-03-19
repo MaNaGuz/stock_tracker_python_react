@@ -3,7 +3,7 @@ from pathlib import Path
 
 DB_PATH = "/opt/store/data/orders.db"
 
-def create_db():
+def create_db(DB_PATH):
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
