@@ -1,13 +1,10 @@
-const API_BASE = "";
-
-
 export async function fetchOrders() {
-    const res = await fetch(`${API_BASE}/orders`);
+    const res = await fetch("/orders");
     return res.json();
 }
 
 export async function updateOrderStatus(id, status) {
-    const res = await fetch(`${API_BASE}/orders/update`, {
+    const res = await fetch("/orders/update", {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -21,7 +18,7 @@ export async function updateOrderStatus(id, status) {
 }
 
 export async function createOrder(form) {
-    const res = await fetch(`${API_BASE}/orders/new`,{
+    const res = await fetch("/orders/new",{
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -32,7 +29,7 @@ export async function createOrder(form) {
 }
 
 export async function createItem(form) {
-    const res = await fetch(`${API_BASE}/stock/new`,{
+    const res = await fetch("/stock/new",{
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -42,17 +39,17 @@ export async function createItem(form) {
 }
 
 export async function fetchActiveOrders(id) {
-    const res = await fetch(`${API_BASE}/orders/active`);
+    const res = await fetch("/orders/active");
     return res.json();
 }
 
 export async function fetchPastOrders(id) {
-    const res = await fetch(`${API_BASE}/orders/past`);
+    const res = await fetch("/orders/past");
     return res.json();
 }
 
 export async function fetchStock() {
-    const res = await fetch(`${API_BASE}/stock`, {
+    const res = await fetch("/stock", {
         method: "GET",
         headers: {},
     });
@@ -60,7 +57,7 @@ export async function fetchStock() {
 }
 
 export async function fetchProducts() {
-    const res = await fetch(`${API_BASE}/stock/products`, {
+    const res = await fetch("/stock/products", {
         method: "GET",
         headers: {},
     });
@@ -68,7 +65,7 @@ export async function fetchProducts() {
 }
 
 export async function fetchOrderById(id) {
-    const res = await fetch(`${API_BASE}/orders/${id}`,{
+    const res = await fetch(`/orders/${id}`,{
         method: "GET",
         headers: {},
     });
