@@ -1,7 +1,7 @@
 import sqlite3
 from pathlib import Path
 
-DB_PATH = "/opt/store/data/stock.db"
+DB_PATH = "/opt/store/data/orders.db"
 
 def create_db():
     conn = sqlite3.connect(DB_PATH)
