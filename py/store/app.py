@@ -325,7 +325,7 @@ def get_products():
         }
 
 
-@app.route("/stock/", methods=["GET"])
+@app.route("/stock", methods=["GET"])
 def get_all_stock():
     try:
         conn = sqlite3.connect(DB_PATH)
