@@ -5,6 +5,8 @@ services:
     build:
       context: ./py
     container_name: flask_backend
+    volumes:
+      - ./py/data:/opt/store/data
     expose:
       - "5000"
 
