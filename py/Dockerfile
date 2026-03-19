@@ -11,8 +11,6 @@ WORKDIR /opt/store
 COPY config/ /opt/store/config
 COPY store/ /opt/store/py
 
-RUN mkdir -p /opt/store/data
-
 RUN pip install --no-cache-dir -r config/requirements.txt
 
 RUN python3 py/db_create.py > db_create.out

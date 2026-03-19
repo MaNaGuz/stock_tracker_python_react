@@ -26,8 +26,7 @@ app = Flask(__name__)
 
 CORS(app)
 
-DB_PATH = Path("../data/orders.db")
-print("Using DB:", DB_PATH.resolve())
+DB_PATH = "/opt/store/data/stock.db"
 
 
 @app.route("/")
@@ -35,6 +34,7 @@ def home():
     return render_template(
         "index.html"
     )
+
 
 @app.route("/orders", methods=["GET"])
 def orders():
