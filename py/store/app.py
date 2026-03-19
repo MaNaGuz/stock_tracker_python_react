@@ -26,7 +26,7 @@ app = Flask(__name__)
 
 CORS(app)
 
-DB_PATH = "/opt/store/data/stock.db"
+DB_PATH = "/opt/store/data/orders.db"
 
 
 @app.route("/")
