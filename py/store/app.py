@@ -22,7 +22,7 @@ from .queries import \
     PAST_ORDRS_QRY, \
     prdcts_names_qry
 
-from db_create import create_db
+from .db_create import create_db
 
 app = Flask(__name__)
 
