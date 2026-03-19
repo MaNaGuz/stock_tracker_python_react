@@ -8,6 +8,8 @@ ENV PATH="/venv/bin:$PATH"
 
 WORKDIR /opt/store
 
+RUN mkdir -p /opt/store/data
+
 COPY config/ /opt/store/config
 COPY store/ /opt/store/py
 
