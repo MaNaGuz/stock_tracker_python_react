@@ -14,6 +14,6 @@ COPY store/ /opt/store
 
 RUN mkdir -p /opt/store/data
 
-RUN pip install -r config/requirements.txt
+RUN pip install --no-cache-dir -r config/requirements.txt
 
 CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app"]
