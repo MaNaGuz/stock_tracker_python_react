@@ -17,4 +17,11 @@ RUN pip install --no-cache-dir -r config/requirements.txt
 
 EXPOSE 5000
 
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "--access-logfile", "-", "py.app:app"]
+CMD [ \
+    "gunicorn", \
+    "-b", "0.0.0.0:5001", \
+    "--log-level", "info", \
+    "--access-logfile", "-", \
+    "--error-logfile", "-", \
+    "py.app:app" \
+]

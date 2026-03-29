@@ -1,10 +1,8 @@
-import os
-import json
 import uuid
 import sqlite3
 from sqlite3 import IntegrityError
 import traceback
-from pathlib import Path
+import logging
 
 from flask import Flask, request, render_template
 from flask_cors import CORS
@@ -24,12 +22,19 @@ from .queries import \
 
 from .db_create import create_db
 
+logging.basicConfig(level=logging.INFO)
+
+LOG = logging.getLogger(__name__)
+
 app = Flask(__name__)
 
 CORS(app)
 
 DB_PATH = "/opt/store/data/orders.db"
 
+LOG.info("Creating DB if doesn't exist")
+
+create_db(DB_PATH)
 
 @app.route("/")
 def home():
@@ -350,5 +355,6 @@ def get_all_stock():
 
 
 if __name__ == "__main__":
+    LOG.info("main start")
     create_db(DB_PATH)
     app.run(host="0.0.0.0", port=5000)

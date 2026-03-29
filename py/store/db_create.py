@@ -1,7 +1,9 @@
 import sqlite3
+import logging
 from pathlib import Path
 
-DB_PATH = "/opt/store/data/orders.db"
+logging.basicConfig(level=logging.INFO)
+LOG = logging.getLogger(__name__)
 
 def create_db(DB_PATH):
     conn = sqlite3.connect(DB_PATH)
@@ -33,7 +35,7 @@ def create_db(DB_PATH):
 
     conn.commit()
     conn.close()
-    print("Database created")
+    LOG.info("Database created")
 
 if __name__ == "__main__":
     create_db()
