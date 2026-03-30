@@ -15,13 +15,12 @@ COPY store/ /opt/store/py
 
 RUN pip install --no-cache-dir -r config/requirements.txt
 
-EXPOSE 5000
+EXPOSE 8080
 
-CMD [ \
-    "gunicorn", \
-    "-b", "0.0.0.0:5001", \
-    "--log-level", "info", \
-    "--access-logfile", "-", \
-    "--error-logfile", "-", \
-    "py.app:app" \
-]
+CMD sh -c  \
+    "gunicorn \
+    -b 0.0.0.0:${PORT:-8080} \
+    --log-level info \
+    --access-logfile - \
+    --error-logfile - \
+    py.app:app" \

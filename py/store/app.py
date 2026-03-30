@@ -357,4 +357,4 @@ def get_all_stock():
 if __name__ == "__main__":
     LOG.info("main start")
     create_db(DB_PATH)
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=8080)
