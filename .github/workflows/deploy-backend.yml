@@ -39,7 +39,7 @@ jobs:
       
       - name: Build image
         run: |
-          docker build -t "${{ vars.GCP_REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ vars.ARTIFACT_REPO }}/${{ env.IMAGE_NAME }}:${{ github.sha }}" ./py/GCP
+          docker build -t "${{ vars.GCP_REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ vars.ARTIFACT_REPO }}/${{ env.IMAGE_NAME }}:${{ github.sha }}" ./py
       
       - name: Push image
         run: |
