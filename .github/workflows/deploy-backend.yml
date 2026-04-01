@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "py/**"
+      - "py/GCP/**"
       - ".github/workflows/deploy-backend.yml"
   workflow_dispatch:
 
