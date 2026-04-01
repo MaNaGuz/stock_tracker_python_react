@@ -2,10 +2,12 @@ name: Deploy backend to Cloud Run
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
     paths:
-      - "backend/**"
+      - "py/**"
       - ".github/workflows/deploy-backend.yml"
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -25,13 +27,13 @@ jobs:
           workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
           service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
 
-      - name: Deploy to Cloud Run
+      - name: Deploy backend
         id: deploy
         uses: google-github-actions/deploy-cloudrun@v3
         with:
-          service: stock-tracker-backend
-          region: ${{ secrets.GCP_REGION }}
+          service: ${{ vars.CLOUD_RUN_SERVICE }}
+          region: ${{ vars.GCP_REGION }}
           source: ./backend
 
-      - name: Show URL
-        run: echo "Service URL: ${{ steps.deploy.outputs.url }}"
+      - name: Output URL
+        run: echo "${{ steps.deploy.outputs.url }}"
