@@ -20,7 +20,7 @@ from .queries import \
     PAST_ORDRS_QRY, \
     prdcts_names_qry
 
-from .db_create import create_db
+#from .db_create import create_db
 
 logging.basicConfig(level=logging.INFO)
 
@@ -34,7 +34,7 @@ DB_PATH = "/opt/store/data/orders.db"
 
 LOG.info("Creating DB if doesn't exist")
 
-create_db(DB_PATH)
+#create_db(DB_PATH)
 
 @app.route("/")
 def home():
@@ -356,5 +356,5 @@ def get_all_stock():
 
 if __name__ == "__main__":
     LOG.info("main start")
-    create_db(DB_PATH)
+    #create_db(DB_PATH)
     app.run(host="0.0.0.0", port=8080)
