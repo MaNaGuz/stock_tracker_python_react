@@ -52,6 +52,9 @@ jobs:
       - run: npm ci
       - run: npm run build
 
+      - name: Debug project id
+        run: echo {{ vars.GCP_PROJECT_ID }}
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
