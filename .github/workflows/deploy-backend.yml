@@ -14,7 +14,7 @@ permissions:
   id-token: write
 
 env:
-  PROJECT_ID: stock-tracker-491901
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   IMAGE_NAME: backend
 
 jobs:
