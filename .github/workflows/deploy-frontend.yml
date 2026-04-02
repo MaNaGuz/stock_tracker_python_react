@@ -53,7 +53,7 @@ jobs:
       - run: npm run build
 
       - name: Debug project id
-        run: echo {{ vars.GCP_PROJECT_ID }}
+        run: echo "{{ vars.GCP_PROJECT_ID }}"
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
